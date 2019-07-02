@@ -1,0 +1,103 @@
+{
+	"description": "项目配置文件",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"autoAudits": false
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.6.6",
+	"appid": "wx379b2f3e7c5d6932",
+	"projectname": "aibotiyu",
+	"debugOptions": {
+		"hidedInDevtools": []
+	},
+	"isGameTourist": false,
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 0,
+			"list": [
+				{
+					"id": 0,
+					"name": "确认信息",
+					"pathName": "pages/apply/apply-info/apply-info",
+					"query": "name=程旺&no=&sport=足球&count=20&start=2019.07.01&type=1&classweek=6,星期六,0,星期日,5,星期五,4,星期四,3,星期三,2,星期二,1,星期一&classtime=08:00,08:00,08:00,08:00,08:00,08:00,08:00&tel=17376573100&price=4200&salesman=程旺&note=优惠&classtype=普通班",
+					"scene": null
+				},
+				{
+					"id": 1,
+					"name": "确认信息-连续上课",
+					"pathName": "pages/apply/apply-info/apply-info",
+					"query": "name=程旺1&no=2234&sport=游泳&count=20&start=2019.07.07&type=7&classweek=6,星期六,0,星期日,5,星期五,4,星期四,3,星期三,2,星期二,1,星期一&classtime=12:00,12:00,12:00,12:00,12:00,12:00,12:00",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "学生",
+					"pathName": "pages/student/student",
+					"query": "name=程旺1&no=2234&sport=游泳&count=20&start=2019.07.07&type=7&classweek=6,星期六,0,星期日,5,星期五,4,星期四,3,星期三,2,星期二,1,星期一&classtime=12:00,12:00,12:00,12:00,12:00,12:00,12:00",
+					"scene": null
+				},
+				{
+					"id": 3,
+					"name": "学生信息",
+					"pathName": "pages/student/student-info/student-info",
+					"query": "content=M960726&type=1",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "学生信息-课程",
+					"pathName": "pages/student/student-info/student-info",
+					"query": "date=2019.06.22&sport=网球&type=2",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "报名",
+					"pathName": "pages/apply/apply",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 6,
+					"name": "增加课程套餐",
+					"pathName": "pages/class/add-class-package",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "确认信息-上课时间待定",
+					"pathName": "pages/apply/apply-info/apply-info",
+					"query": "name=程旺&no=M960726&sport=羽毛球&count=20&start=2019.07.01&type=0&classweek=6,星期六,0,星期日,5,星期五,4,星期四,3,星期三,2,星期二,1,星期一&classtime=08:00,08:00,08:00,08:00,08:00,08:00,08:00&tel=17376573100&price=4200&salesman=程旺&note=优惠&classtype=普通班",
+					"scene": null
+				}
+			]
+		}
+	}
+}

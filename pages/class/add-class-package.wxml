@@ -1,0 +1,136 @@
+<view class="container" style='padding:{{statusBarHeight * 2}}px 0 0 0'>
+  <view class="top-bar">新增课程套餐</view>
+  <view class="list">
+    <form bindsubmit="formSubmit">
+      <view class="text-title m-left">套餐基本信息</view>
+      <view class="inputView">
+        <input bindinput="GetPackageName" maxlength="25" name="PackageName" placeholder="套餐名称" placeholderStyle="color:#555555" style="height:80rpx;line-height:80rpx;width:100%"></input>
+      </view>
+      <view class="actionSheetView" bindtap="BindSetSports">{{sportname}}</view>
+      <view class="inputView">
+        <input bindinput="BindSetSportsCount" maxlength="10" name="count" placeholder="请输入课程课时" placeholderStyle="color:#555555" style="height:80rpx;line-height:80rpx;width:100%" type='number'></input>
+      </view>
+      <view class="actionSheetView" bindtap="BindSetClassType">{{classtypechoose}}</view>
+      <view class="text-title m-left">课程时间</view>
+      <view class="inputView">
+        <input bindinput="BindSetStartTime" maxlength="10" name="starttime" placeholder="课程开始时间 例如2019.08.08" placeholderStyle="color:#555555" style="height:80rpx;line-height:80rpx;width:100%" type='digit'></input>
+      </view>
+      <view class="actionSheetView" bindtap="BindSetClassDay">{{classday}}</view>
+      <block wx:if="{{classdaytype >= 1 && classdaytype != 7}}">
+        <view class="sub-title">输入上课时间1</view>
+        <view class="set-class-week-time">
+          <view class="class-week" bindtap="BindSetClassWeek" data-count="0">
+            {{classweek[0][1]}}
+          </view>
+          <view class="class-time">
+            <picker mode="time" value="{{time}}" start="08:00" end="21:00" bindchange="bindTimeChange" data-count="0">
+              <view class="picker">{{classtime[0]}}</view>
+            </picker>
+          </view>
+        </view>
+      </block>
+      <block wx:if="{{classdaytype >= 2 && classdaytype != 7}}">
+        <view class="sub-title">输入上课时间2</view>
+        <view class="set-class-week-time">
+          <view class="class-week" bindtap="BindSetClassWeek" data-count="1">
+            {{classweek[1][1]}}
+          </view>
+          <view class="class-time">
+            <picker mode="time" value="{{time}}" start="08:00" end="21:00" bindchange="bindTimeChange" data-count="1">
+              <view class="picker">{{classtime[1]}}</view>
+            </picker>
+          </view>
+        </view>
+      </block>
+      <block wx:if="{{classdaytype >= 3 && classdaytype != 7}}">
+        <view class="sub-title">输入上课时间3</view>
+        <view class="set-class-week-time">
+          <view class="class-week" bindtap="BindSetClassWeek" data-count="2">
+            {{classweek[2][1]}}
+          </view>
+          <view class="class-time">
+            <picker mode="time" value="{{time}}" start="08:00" end="21:00" bindchange="bindTimeChange" data-count="2">
+              <view class="picker">{{classtime[2]}}</view>
+            </picker>
+          </view>
+        </view>
+      </block>
+      <block wx:if="{{classdaytype >= 4 && classdaytype != 7}}">
+        <view class="sub-title">输入上课时间4</view>
+        <view class="set-class-week-time">
+          <view class="class-week" bindtap="BindSetClassWeek" data-count="3">
+            {{classweek[3][1]}}
+          </view>
+          <view class="class-time">
+            <picker mode="time" value="{{time}}" start="08:00" end="21:00" bindchange="bindTimeChange" data-count="3">
+              <view class="picker">{{classtime[3]}}</view>
+            </picker>
+          </view>
+        </view>
+      </block>
+      <block wx:if="{{classdaytype >= 5 && classdaytype != 7}}">
+        <view class="sub-title">输入上课时间5</view>
+        <view class="set-class-week-time">
+          <view class="class-week" bindtap="BindSetClassWeek" data-count="4">
+            {{classweek[4][1]}}
+          </view>
+          <view class="class-time">
+            <picker mode="time" value="{{time}}" start="08:00" end="21:00" bindchange="bindTimeChange" data-count="4">
+              <view class="picker">{{classtime[4]}}</view>
+            </picker>
+          </view>
+        </view>
+      </block>
+      <block wx:if="{{classdaytype == 7}}">
+        <view class="sub-title">输入每天上课时间</view>
+        <view class="set-class-week-time">
+          <view class="class-week" bindtap="" data-count="">
+            每天
+          </view>
+          <view class="class-time">
+            <picker mode="time" value="{{time}}" start="08:00" end="21:00" bindchange="bindTimeChange" data-count="0">
+              <view class="picker">{{classtime[0]}}</view>
+            </picker>
+          </view>
+        </view>
+      </block>
+      <view class="submit" bindtap='submit'>提交信息</view>
+    </form>
+  </view>
+</view>
+
+<action-sheet bindchange="actionSheetChange" hidden="{{SportFlag}}">
+  <block wx:for="{{sports}}" wx:key="*no">
+    <action-sheet-item class="item" bindtap="BindChooseSport" data-name="{{item[1]}}">
+      {{item[1]}}
+    </action-sheet-item>
+  </block>
+  <action-sheet-cancel class="cancel" bindtap="BindHideChooseSport">取消</action-sheet-cancel>
+</action-sheet>
+
+<action-sheet bindchange="actionSheetChange" hidden="{{ClassTypeFlag}}">
+  <block wx:for="{{classtype}}" wx:key="*no">
+    <action-sheet-item class="item" bindtap="BindChooseClassType" data-name="{{item}}">
+      {{item}}
+    </action-sheet-item>
+  </block>
+  <action-sheet-cancel class="cancel" bindtap="BindHideClassType">取消</action-sheet-cancel>
+</action-sheet>
+
+<action-sheet bindchange="actionSheetChange" hidden="{{DayFlag}}">
+  <block wx:for="{{day}}" wx:key="*no">
+    <action-sheet-item class="item" bindtap="BindChooseClassDay" data-name="{{item[1]}}" data-type="{{item[0]}}">
+      {{item[1]}}
+    </action-sheet-item>
+  </block>
+  <action-sheet-cancel class="cancel" bindtap="BindHideChooseClassDay">取消</action-sheet-cancel>
+</action-sheet>
+
+<action-sheet bindchange="actionSheetChange" hidden="{{WeekFlag}}">
+  <block wx:for="{{week}}" wx:key="*no">
+    <action-sheet-item class="item" bindtap="BindChooseClassWeek" data-name="{{item[1]}}" data-type="{{item[0]}}">
+      {{item[1]}}
+    </action-sheet-item>
+  </block>
+  <action-sheet-cancel class="cancel" bindtap="BindHideChooseClassWeek">取消</action-sheet-cancel>
+</action-sheet>

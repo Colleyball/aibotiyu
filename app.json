@@ -1,0 +1,19 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/apply/apply",
+    "pages/logs/logs",
+    "pages/apply/apply-info/apply-info",
+    "pages/student/student",
+    "pages/student/student-info/student-info",
+    "pages/class/add-class-package",
+    "pages/leave/leave"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json"
+}

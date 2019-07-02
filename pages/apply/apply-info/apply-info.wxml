@@ -1,0 +1,65 @@
+<view class="list">
+  <view class="text-title">请确认报名信息</view>
+  <view class="apply-info">
+    <view class="apply-info-title">姓名</view>
+    <view class="apply-info-content">{{name}}</view>
+  </view>
+  <view class="apply-info">
+    <view class="apply-info-title">学号</view>
+    <view class="apply-info-content">{{no}}</view>
+  </view>
+  <view class="apply-info">
+    <view class="apply-info-title">联系方式</view>
+    <view class="apply-info-content">{{tel}}</view>
+  </view>
+  <view class="apply-info">
+    <view class="apply-info-title">报名项目</view>
+    <view class="apply-info-content">{{sport}}</view>
+  </view>
+  <view class="apply-info">
+    <view class="apply-info-title">课程类型</view>
+    <view class="apply-info-content">{{classtype}}</view>
+  </view>
+  <view class="apply-info">
+    <view class="apply-info-title">课程次数</view>
+    <view class="apply-info-content">{{count}}</view>
+  </view>
+  <view class="apply-info">
+    <view class="apply-info-title">开始时间</view>
+    <view class="apply-info-content">{{start}}</view>
+  </view>
+  <view class="apply-info">
+    <view class="apply-info-title">价格</view>
+    <view class="apply-info-content">{{price}}</view>
+  </view>
+  <view class="sub-title">上课时间</view>
+  <view class="apply-info">
+    <view class="apply-info-title">一周课程</view>
+    <view class="apply-info-content" wx:if="{{type != 7}}">一周{{type}}次课</view>
+    <view class="apply-info-content" wx:else>连续上课</view>
+  </view>
+  <block wx:if="{{type != 7}}" wx:for="{{classweek}}" wx:key="index">
+    <view class="apply-info">
+      <view class="apply-info-title" wx:if="{{item != 0}}">星期{{item}}</view>
+      <view class="apply-info-title" wx:else>星期日</view>
+      <view class="apply-info-content">{{classtime[index]}}</view>
+    </view>
+  </block>
+  <block wx:if="{{type == 7}}">
+    <view class="apply-info">
+      <view class="apply-info-title">每天</view>
+      <view class="apply-info-content">{{classtime[0]}}</view>
+    </view>
+  </block>
+  <view class="sub-title">其他</view>
+  <view class="apply-info">
+    <view class="apply-info-title">业务员</view>
+    <view class="apply-info-content">{{salesman}}</view>
+  </view>
+  <view class="apply-info">
+    <view class="apply-info-title">备注</view>
+    <view class="apply-info-content">{{note}}</view>
+  </view>
+  <view class="submit" bindtap='submit'>确认报名</view>
+  <view class="submit" bindtap='cancel'>返回修改</view>
+</view>

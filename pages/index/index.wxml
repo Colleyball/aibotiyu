@@ -1,0 +1,27 @@
+<view class="list" style='margin-top: 550rpx'>
+  <view class="top-bar">
+    <image class="top-bar-icon user-avatar" src="http://aibotiyu.game-win.cn/resource/aibotiyu/images/logo.ico" />
+    <view class="top-bar-text">爱搏体育</view>
+  </view>
+  <view bindtap="Registratio" class="box-wide user-search">
+    <image class="box-wide-pic" mode="aspectFill" src=""></image>
+    <text class="box-wide-TxtZh">学生报名</text>
+    <text class="box-wide-TxtEn">Student Registratio</text>
+  </view>
+  <view class="box-combin-row">
+    <view class="box-combin-column">
+      <view bindtap="Leave" class="box-small user-statistic">
+        <image class="box-small-pic" mode="aspectFill" src="../../images/class.png"></image>
+        <view class="box-small-TxtZh">请假管理</view>
+      </view>
+      <view bindtap="Download" class="box-small user-about">
+        <image class="box-small-pic" mode="aspectFill" src="../../images/download.png"></image>
+        <view class="box-small-TxtZh">报表下载</view>
+      </view>
+    </view>
+    <view bindtap="Student" class="box-middle user-favourite">
+      <image class="box-middle-pic" mode="aspectFill" src="../../images/student.png"></image>
+      <view class="box-middle-TxtZh">学生管理</view>
+    </view>
+  </view>
+</view>

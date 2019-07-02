@@ -1,0 +1,45 @@
+<view class="container" style='padding:{{statusBarHeight * 2}}px 0 0 0'>
+  <view class="top-bar">学生管理</view>
+  <view class="list">
+    <view class="box-wide name" bindtap='search' data-type='0'>
+      <image class="box-wide-pic" mode="aspectFill" src=""></image>
+      <text class="box-wide-TxtZh">按名字检索</text>
+      <text class="box-wide-TxtEn">Search by Name</text>
+    </view>
+    <view class="box-wide no" bindtap='search' data-type='1'>
+      <image class="box-wide-pic" mode="aspectFill" src=""></image>
+      <text class="box-wide-TxtZh">按学号检索</text>
+      <text class="box-wide-TxtEn">Search by No</text>
+    </view>
+    <view class="box-wide time" bindtap='search' data-type='2'>
+      <image class="box-wide-pic" mode="aspectFill" src=""></image>
+      <text class="box-wide-TxtZh">按课程检索</text>
+      <text class="box-wide-TxtEn">Group by Class</text>
+    </view>
+  </view>
+</view>
+
+<view class="cover" hidden='{{searchFlag}}'></view>
+<view class="serach-box" hidden='{{searchFlag}}'>
+  <view class="search-type">{{searchName}}</view>
+  <view class="search-input">
+     <input bindinput="GetContent" maxlength="25" name="StudentNo" placeholder="{{seaarchTips}}" placeholderStyle="color:#555555" style="height:80rpx;line-height:80rpx;width:100%"></input>
+  </view>
+  <view class="search-button" bindtap='searchSubmit'>查询</view>
+  <view class="search-button cancel" bindtap='searchCancel'>取消</view>
+</view>
+
+<view class="cover" hidden='{{searchCourseFlag}}'></view>
+<view class="serach-box" hidden='{{searchCourseFlag}}'>
+  <view class="search-type">按课程搜索</view>
+  <view class="search-input">
+    <input bindinput="GetDate" maxlength="25" name="date" placeholder="请输入日期" placeholderStyle="color:#555555" style="height:80rpx;line-height:80rpx;width:100%" type='digit'></input>
+  </view>
+  <view class="search-tip">输入示例：2019.08.10</view>
+  <view class="search-input">
+    <input bindinput="GetSport" maxlength="10" name="sport" placeholder="请输入项目" placeholderStyle="color:#555555" style="height:80rpx;line-height:80rpx;width:100%"></input>
+  </view>
+  <view class="search-tip">输入示例：游泳、网球……</view>
+  <view class="search-button" bindtap='searchCourseSubmit'>查询</view>
+  <view class="search-button cancel" bindtap='searchCancel'>取消</view>
+</view>
