@@ -7,7 +7,8 @@
     "pages/student/student",
     "pages/student/student-info/student-info",
     "pages/class/add-class-package",
-    "pages/leave/leave"
+    "pages/leave/leave",
+    "pages/webview/webview"
   ],
   "window": {
     "backgroundTextStyle": "light",

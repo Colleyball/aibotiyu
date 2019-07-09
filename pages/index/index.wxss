@@ -12,6 +12,7 @@ page, .page {
 .list {
   width: 680rpx;
   margin: 150rpx 0 0 35rpx;
+  padding: 0 0 40rpx 0
 }
 
 .box-thin {

@@ -16,12 +16,22 @@ Page({
   },
   Leave: function () {
     wx.navigateTo({
-      url: '../leave/leave',
+      url: '../webview/webview?site=leave',
     })
   },
   Download: function () {
     wx.showToast({
       title: '正在开发中',
+    })
+  },
+  Sports: function () {
+    wx.navigateTo({
+      url: '../webview/webview?site=sport',
+    })
+  },
+  Location: function () {
+    wx.navigateTo({
+      url: '../webview/webview?site=location',
     })
   },
   onLoad: function (options) {

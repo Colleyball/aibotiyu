@@ -45,7 +45,7 @@
 					"id": 0,
 					"name": "确认信息",
 					"pathName": "pages/apply/apply-info/apply-info",
-					"query": "name=程旺&no=&sport=足球&count=20&start=2019.07.01&type=1&classweek=6,星期六,0,星期日,5,星期五,4,星期四,3,星期三,2,星期二,1,星期一&classtime=08:00,08:00,08:00,08:00,08:00,08:00,08:00&tel=17376573100&price=4200&salesman=程旺&note=优惠&classtype=普通班",
+					"query": "name=程旺&no=M01722&sport=足球&count=20&start=2019.07.01&type=1&classweek=6,星期六,0,星期日,5,星期五,4,星期四,3,星期三,2,星期二,1,星期一&classtime=08:00,08:00,08:00,08:00,08:00,08:00,08:00&tel=17376573100&price=4200&salesman=程旺&note=优惠&classtype=普通班",
 					"scene": null
 				},
 				{

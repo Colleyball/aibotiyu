@@ -1,18 +1,18 @@
-// pages/leave/leave.js
+// pages/webview/webview.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    
+
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    if (options.site == 'leave') {
+    if(options.site == 'leave') {
       this.setData({
         website: 'http://aibotiyu.game-win.cn/App/ShowAllLeave'
       })
@@ -20,13 +20,13 @@ Page({
 
     if (options.site == 'sport') {
       this.setData({
-        website: 'http://aibotiyu.game-win.cn/admin/class/addsports'
+        website: 'http://aibotiyu.game-win.cn/admin/class/addsports?wechat=20190709'
       })
     }
 
     if (options.site == 'location') {
       this.setData({
-        website: 'http://aibotiyu.game-win.cn/admin/class/location'
+        website: 'http://aibotiyu.game-win.cn/admin/class/location?wechat=20190709'
       })
     }
   },

@@ -74,7 +74,8 @@ Page({
       success: function (res) {
         console.log(res.data),
         that.setData({
-          StudentNo: res.data.data
+          StudentNo: res.data.data,
+          No: res.data.data
         })
       }
     })

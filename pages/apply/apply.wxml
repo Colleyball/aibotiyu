@@ -12,7 +12,7 @@
       <view class="set-class-week-time">
         <view class="class-week" bindtap="AutoGetStudentNo">点击生成</view>
         <view class="class-time">
-          <input bindinput="GetStudentNo" maxlength="25" name="StudentNo" placeholder="输入学生学号" placeholderStyle="color:#555555" style="height:80rpx;line-height:80rpx;width:100%" type='number' value="{{StudentNo}}"></input>
+          <input bindinput="GetStudentNo" maxlength="25" name="StudentNo" placeholder="输入学生学号" placeholderStyle="color:#555555" style="height:80rpx;line-height:80rpx;width:100%" type='text' value="{{StudentNo}}"></input>
         </view>
       </view>
       <view class="input-tip">点击【生成】按钮，新用户将生成新学号，老用户将自动填写原学号，若手动输入仅需输入数字部分</view>
