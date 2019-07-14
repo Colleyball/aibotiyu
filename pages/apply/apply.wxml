@@ -18,6 +18,7 @@
       <view class="input-tip">点击【生成】按钮，新用户将生成新学号，老用户将自动填写原学号，若手动输入仅需输入数字部分</view>
       <view class="text-title m-left">输入课程信息</view>
       <view class="actionSheetView" bindtap="BindSetSports">{{sportname}}</view>
+      <view class="actionSheetView" bindtap="BindSetLocation">{{location}}</view>
       <view class="actionSheetView" bindtap="BindSetClassType">{{classtypechoose}}</view>
       <view class="inputView">
         <input bindinput="BindSetSportsCount" maxlength="10" name="count" placeholder="请输入课程课时" placeholderStyle="color:#555555" style="height:80rpx;line-height:80rpx;width:100%" type='number'></input>
@@ -125,12 +126,21 @@
 
 
 <action-sheet bindchange="actionSheetChange" hidden="{{SportFlag}}">
-  <block wx:for="{{sports}}" wx:key="*no">
+  <block wx:for="{{sports}}" wx:key="no">
     <action-sheet-item class="item" bindtap="BindChooseSport" data-name="{{item[1]}}">
       {{item[1]}}
     </action-sheet-item>
   </block>
   <action-sheet-cancel class="cancel" bindtap="BindHideChooseSport">取消</action-sheet-cancel>
+</action-sheet>
+
+<action-sheet bindchange="actionSheetChange" hidden="{{LocationFlag}}">
+  <block wx:for="{{LocationList}}" wx:key="no">
+    <action-sheet-item class="item" bindtap="BindChooseLocation" data-name="{{item.location}}">
+      {{item.location}}
+    </action-sheet-item>
+  </block>
+  <action-sheet-cancel class="cancel" bindtap="BindHideChooseLocation">取消</action-sheet-cancel>
 </action-sheet>
 
 <action-sheet bindchange="actionSheetChange" hidden="{{ClassTypeFlag}}">
@@ -143,7 +153,7 @@
 </action-sheet>
 
 <action-sheet bindchange="actionSheetChange" hidden="{{classpackageFlag}}">
-  <block wx:for="{{classpackage}}" wx:key="*no">
+  <block wx:for="{{classpackage}}" wx:key="no">
     <action-sheet-item class="item" bindtap="BindChooseClassPackage" data-name="{{item[1]}}">
       {{item[1]}}
     </action-sheet-item>
@@ -152,7 +162,7 @@
 </action-sheet>
 
 <action-sheet bindchange="actionSheetChange" hidden="{{DayFlag}}">
-  <block wx:for="{{day}}" wx:key="*no">
+  <block wx:for="{{day}}" wx:key="no">
     <action-sheet-item class="item" bindtap="BindChooseClassDay" data-name="{{item[1]}}" data-type="{{item[0]}}">
       {{item[1]}}
     </action-sheet-item>
@@ -161,7 +171,7 @@
 </action-sheet>
 
 <action-sheet bindchange="actionSheetChange" hidden="{{WeekFlag}}">
-  <block wx:for="{{week}}" wx:key="*no">
+  <block wx:for="{{week}}" wx:key="no">
     <action-sheet-item class="item" bindtap="BindChooseClassWeek" data-name="{{item[1]}}" data-type="{{item[0]}}">
       {{item[1]}}
     </action-sheet-item>

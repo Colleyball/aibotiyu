@@ -13,6 +13,7 @@ Page({
     DayFlag: true,
     WeekFlag: true,
     sportname: '请选择运动项目',
+    location: '请选择场馆',
     classday: '请选择每周上课次数',
     day: [['1', '一周一次课'], ['2', '一周两次课'], ['3', '一周三次课'], ['4', '一周四次课'], ['5', '一周五次课'], ['7', '连续上课']],
     week: [['0', '星期天'], ['1', '星期一'], ['2', '星期二'], ['3', '星期三'], ['4', '星期四'], ['5', '星期五'], ['6', '星期六']],
@@ -21,9 +22,10 @@ Page({
     classtype: ['普通班', '基础班', '提高班', '私教班'],
     classtypechoose: '选择班级种类',
     ClassTypeFlag: true,
+    LocationFlag: true,
     classpackage: [['0', '手动输入']],
     classpackagechoose: '请选择课程套餐',
-    classpackageFlag: true,
+    classpackageFlag: true
   },
   GetStudentName: function (e) {
     this.setData({
@@ -198,10 +200,50 @@ Page({
       classtime: classtime
     })
   },
+  BindSetLocation: function () {
+    var that = this
+    wx.request({
+      url: 'http://aibotiyu.game-win.cn/App/GetLocation',
+      header: {
+        "content-type": "application/json;charset=utf8"
+      },
+      method: "GET",
+      data: {
+        sport: that.data.sportname
+      },
+      success: function (res) {
+        console.log(res.data)
+        if (res.data.data.length == 0) {
+          wx.showModal({
+            title: '提示',
+            content: '请先选择运动项目，或前往场馆管理添加相应的场地',
+            showCancel: false
+          })
+        }
+        that.setData({
+          LocationList: res.data.data,
+          LocationFlag: false
+        })
+      }
+    })
+  },
+  BindChooseLocation: function (e) {
+    var that = this
+    that.setData({
+      location: e.currentTarget.dataset.name,
+      LocationFlag: true
+    })
+  },
+  BindHideChooseLocation: function () {
+    var that = this
+    that.setData({
+      LocationFlag: true
+    })
+  },
   submit: function (e) {
     var that = this
     wx.navigateTo({
-      url: 'apply-info/apply-info?name=' + that.data.Name + '&no=' + that.data.No + '&sport=' + that.data.sportname + '&count=' + that.data.classcount + '&start=' + that.data.starttime + '&type=' + that.data.classdaytype + '&classweek=' + that.data.classweek + '&classtime=' + that.data.classtime + '&tel=' + that.data.Tel + '&price=' + that.data.Price + '&salesman=' + that.data.Salesman + '&note=' + that.data.Note + '&classtype=' + that.data.classtypechoose,
+      url: 'apply-info/apply-info?name=' + that.data.Name + '&no=' + that.data.No + '&sport=' + that.data.sportname + '&count=' + that.data.classcount + '&start=' + that.data.starttime + '&type=' + that.data.classdaytype + '&classweek=' + that.data.classweek + '&classtime=' + that.data.classtime + '&tel=' + that.data.Tel + '&price=' + that.data.Price + '&salesman=' + that.data.Salesman + '&note=' + that.data.Note + '&classtype=' + that.data.classtypechoose + '&location=' + that.data.location,
     })
   },
 

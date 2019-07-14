@@ -1,4 +1,4 @@
-<view class="list" style='margin-top: 550rpx'>
+<view class="list" style='margin-top:450rpx'>
   <view class="top-bar">
     <image class="top-bar-icon user-avatar" src="http://aibotiyu.game-win.cn/resource/aibotiyu/images/logo.ico" />
     <view class="top-bar-text">爱搏体育</view>
@@ -25,17 +25,17 @@
     </view>
   </view>
   <view class="box-combin-row" style='margin: 20rpx 0 0 0'>
-    <view bindtap="Student" class="box-middle user-favourite">
-      <image class="box-middle-pic" mode="aspectFill" src="../../images/student.png"></image>
-      <view class="box-middle-TxtZh">学生管理</view>
+    <view bindtap="Package" class="box-middle user-about">
+      <image class="box-middle-pic" mode="aspectFill" src="../../images/package.png"></image>
+      <view class="box-middle-TxtZh">课程套餐</view>
     </view>
     <view class="box-combin-column">
-      <view bindtap="Sports" class="box-small user-statistic">
-        <image class="box-small-pic" mode="aspectFill" src="../../images/class.png"></image>
+      <view bindtap="Sports" class="box-small user-about">
+        <image class="box-small-pic" mode="aspectFill" src="../../images/sports.png"></image>
         <view class="box-small-TxtZh">项目管理</view>
       </view>
       <view bindtap="Location" class="box-small user-about">
-        <image class="box-small-pic" mode="aspectFill" src="../../images/download.png"></image>
+        <image class="box-small-pic" mode="aspectFill" src="../../images/location.png"></image>
         <view class="box-small-TxtZh">场馆管理</view>
       </view>
     </view>

@@ -34,14 +34,13 @@ Page({
       url: '../webview/webview?site=location',
     })
   },
+  Package: function () {
+    wx.navigateTo({
+      url: '/pages/class/add-class-package',
+    })
+  },
   onLoad: function (options) {
-    if (options.apply == 1) {
-      wx.showModal({
-        title: '提示',
-        content: '报名成功',
-        showCancel: false
-      })
-    }
+
   },
   onShow: function () {
     var that = this

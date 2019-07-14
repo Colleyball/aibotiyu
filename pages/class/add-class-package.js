@@ -144,6 +144,17 @@ Page({
    */
   onLoad: function (options) {
     var that = this
+    wx.showModal({
+      title: '提示',
+      content: '正在开发中',
+      showCancel: false,
+      confirmText: '返回',
+      success: function (res) {
+        if (res.confirm) {
+          wx.navigateBack()
+        }
+      }
+    })
     wx.request({
       url: 'http://aibotiyu.game-win.cn/App/GetSports',
       header: {

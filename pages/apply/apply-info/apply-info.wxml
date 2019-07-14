@@ -17,6 +17,10 @@
     <view class="apply-info-content">{{sport}}</view>
   </view>
   <view class="apply-info">
+    <view class="apply-info-title">场馆</view>
+    <view class="apply-info-content">{{location}}</view>
+  </view>
+  <view class="apply-info">
     <view class="apply-info-title">课程类型</view>
     <view class="apply-info-content">{{classtype}}</view>
   </view>
